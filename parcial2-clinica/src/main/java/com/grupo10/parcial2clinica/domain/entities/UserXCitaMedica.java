@@ -20,4 +20,8 @@ public class UserXCitaMedica {
     @ManyToOne
     @JoinColumn(name = "citaMedica_id")
     private CitaMedica citaMedica;
+
+    @ManyToOne
+    @JoinColumn(name = "especialidad_id")
+    private Especialidad especialidad;
 }

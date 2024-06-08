@@ -30,10 +30,10 @@ public class User implements UserDetails {
     private List<Historial> records;
 
     //Segun roles
-
+    //DCTR (Doctor), PTNT (Patient), ADMN (Admin), ASST (Assitant)
     @OneToMany
     @JsonIgnore
-    private List<UserXCitaMedica> citasMedicasMedico;
+    private List<UserXCitaMedica> citasMedicasDoctor;
 
     @OneToMany
     private List<CitaMedica> citasMedicasPaciente;

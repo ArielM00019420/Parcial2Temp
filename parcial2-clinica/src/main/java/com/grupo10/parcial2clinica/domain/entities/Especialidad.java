@@ -1,7 +1,9 @@
 package com.grupo10.parcial2clinica.domain.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
@@ -10,16 +12,13 @@ import java.util.UUID;
 
 @Entity
 @Data
-@Table(name = "pacial2_rols")
-public class Rol {
+@Table(name = "pacial2_especialty")
+public class Especialidad {
     @Id
     @Pattern(regexp = "^[A-Z]{4}$", message = "El código de la especialidad debe tener 4 letras mayúsculas")
-    private String id;
+    private UUID id;
     private String name;
-    private String description;
 
     @OneToMany
-    @JsonIgnore
-    private List<UserXRol> userRol;
-
+    private List<UserXCitaMedica> doctorSpecialty;
 }
