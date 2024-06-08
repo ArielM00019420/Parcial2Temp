@@ -6,5 +6,4 @@ import lombok.Data;
 public class SaveRolDTO {
     private String id;
     private String name;
-    private String description;
 }

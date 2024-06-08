@@ -10,6 +10,7 @@ import java.util.UUID;
 @Data
 public class AproveeCitaDTO {
     private UUID citaMedicaId;
-    private LocalDateTime dateTime;
+    private LocalDateTime fechaInicio;
+    private LocalDateTime fechaFinal;
     private List<UserXCitaMedica> DoctorAndSpecialty;
 }

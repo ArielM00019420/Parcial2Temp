@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
@@ -18,7 +19,10 @@ public class CitaMedica {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     //Este lo da la asistente
-    private LocalDateTime dateTime;
+    private LocalDateTime fechaInicio;
+    private LocalDateTime fechaFin;
+    //Este es dado por el usuario
+    private LocalDate fechaRequest;
     //Este lo da el usuario
     @NotEmpty
     private String reason;

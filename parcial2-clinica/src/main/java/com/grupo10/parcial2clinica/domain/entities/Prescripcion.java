@@ -13,8 +13,9 @@ public class Prescripcion {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID code;
-    private String description;
-    private LocalDateTime dateTime;
+    private String medicamento;
+    private String dosis;
+    private LocalDateTime fechaFinal;
 
     @ManyToOne
     private CitaMedica citaMedica;

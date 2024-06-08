@@ -13,7 +13,6 @@ public class Historial {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    private String name;
     private String description;
     private LocalDate date;
 

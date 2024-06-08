@@ -3,7 +3,9 @@ package com.grupo10.parcial2clinica.services;
 import com.grupo10.parcial2clinica.domain.dtos.UserRegisterDTO;
 import com.grupo10.parcial2clinica.domain.entities.Token;
 import com.grupo10.parcial2clinica.domain.entities.User;
+import org.springframework.stereotype.Service;
 
+@Service
 public interface UserService {
     User findByIdentifier(String identifier);
     User findByUsernameOrEmail(String username, String email);

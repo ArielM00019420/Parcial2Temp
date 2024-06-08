@@ -31,7 +31,6 @@ public class RolImpl implements RolService {
         Rol rol = new Rol();
         rol.setId(info.getId());
         rol.setName(info.getName());
-        rol.setDescription(info.getDescription());
         rolRepository.save(rol);
     }
 }

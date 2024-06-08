@@ -27,8 +27,12 @@ public class WebSecurityConfiguration {
         return new BCryptPasswordEncoder();
     }
 
+    private final UserService userService;
+
     @Autowired
-    private UserService userService;
+    public WebSecurityConfiguration(UserService userService){
+        this.userService =  userService;
+    }
 
     @Autowired
     private JWTTokenFilter filter;

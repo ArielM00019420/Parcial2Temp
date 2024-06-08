@@ -59,6 +59,7 @@ public class CitaMedicaImpl implements CitaMedicaService {
     public void requestCita(CreateCitaDTO info, User user) {
         CitaMedica citaMedica = new CitaMedica();
         citaMedica.setStatus(false);
+        citaMedica.setFechaRequest(info.getRequestedDate());
         citaMedica.setReason(info.getReason());
         citaMedica.setPatient(user);
         citaMedicaRepository.save(citaMedica);
@@ -72,7 +73,8 @@ public class CitaMedicaImpl implements CitaMedicaService {
     @Override
     public void aproveCita(AproveeCitaDTO infoToAproveeCita) {
         CitaMedica citaMedica = citaMedicaRepository.findById(infoToAproveeCita.getCitaMedicaId()).orElse(null);
-        citaMedica.setDateTime(infoToAproveeCita.getDateTime());
+        citaMedica.setFechaInicio(infoToAproveeCita.getFechaInicio());
+        citaMedica.setFechaFin(infoToAproveeCita.getFechaFinal());
         citaMedica.setDoctorAndSpecialty(infoToAproveeCita.getDoctorAndSpecialty());
         citaMedica.setStatus(true);
         // Anadir rol de paciente al usuario si no lo tiene, la cita ya tiene al usuario que la creo

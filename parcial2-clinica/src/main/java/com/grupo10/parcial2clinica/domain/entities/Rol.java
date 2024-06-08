@@ -16,7 +16,6 @@ public class Rol {
     @Pattern(regexp = "^[A-Z]{4}$", message = "El código de la especialidad debe tener 4 letras mayúsculas")
     private String id;
     private String name;
-    private String description;
 
     @OneToMany
     @JsonIgnore
